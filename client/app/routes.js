@@ -8,6 +8,7 @@
     $routeProvider
       .when('/', {
         controller: 'homepageController',
+        controllerAs: 'vm',
         templateUrl: '/views/homepage.html'
       })
       .otherwise({

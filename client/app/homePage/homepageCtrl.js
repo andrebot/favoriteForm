@@ -4,8 +4,10 @@
   angular.module('FavForm')
     .controller('homepageController', HomepageController);
 
-  function HomepageController ($scope) {
-    $scope.test = 'ola';
+  function HomepageController () {
+    var vm = this;
+
+    vm.test = 'agora';
   }
 
 })();
