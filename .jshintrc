@@ -1,0 +1,8 @@
+{
+  "globals": {
+    "angular": true
+  },
+  "indent": 2,
+  "quotmark": "single",
+  "strict": true
+}

@@ -1,0 +1,46 @@
+{
+  "name": "favorite-form",
+  "version": "0.0.1",
+  "description": "A simple form to register some of your favorite things.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrebot/favoriteForm.git"
+  },
+  "keywords": [
+    "Material Design",
+    "Angular"
+  ],
+  "author": "Andre Botelho Almeida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrebot/favoriteForm/issues"
+  },
+  "homepage": "https://github.com/andrebot/favoriteForm#readme",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-material": "^1.0.8",
+    "angular-messages": "^1.5.5",
+    "angular-mocks": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-sanitize": "^1.5.5"
+  },
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.0.0",
+    "gulp-flatten": "^0.2.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-sass": "^2.3.1",
+    "jshint": "^2.9.2",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.2.1"
+  }
+}
