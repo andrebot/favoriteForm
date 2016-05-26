@@ -9,5 +9,5 @@ gulp.task('watch', function () {
 
   gulp.watch(config.htmlPath, ['copy:html']);
 
-  gulp.watch('./sass/**/*.scss', ['build:css']);
+  gulp.watch(`${config.assetsPath}**/*.scss`, ['build:css']);
 });

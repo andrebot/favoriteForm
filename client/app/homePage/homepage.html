@@ -1,60 +1,70 @@
-<md-card>
+<md-card id="homepage-wrapper">
   <md-card-header layout>
-    <favform-steps steps="3" flex="grow"></favform-steps>
+    <favform-steps steps="3" selected-step="vm.tabSelected" flex="grow"></favform-steps>
   </md-card-header>
   <md-divider></md-divider>
   <md-card-content layout="column" layout-margin>
-    <p class="md-body-1">First things first: tell us a little bit about yourself</p>
+    <md-tabs md-dynamic-height md-border-bottom md-selected="vm.tabSelected">
+      <md-tab label="one">
+        <md-content>
+          <p class="md-body-1">First things first: tell us a little bit about yourself</p>
 
-    <form name="favThings1">
-      <div layout="row">
-        <md-input-container class="md-block" flex="50">
-          <label>Your favorite star wars movie</label>
-          <input ng-model="vm.step1.favSTMovie" ng-blur="vm.handleInputCompletion(favThings1.swMoview.$valid, 25, 1)"
-                  required name="swMoview" 
-                  ng-pattern="/a\snew\shope|the\sempire\sstrikes\sback|return\sof\sthe\sjedi\the\sforce\sawakens/i">
-          </input>
-          <div ng-messages="favThings1.swMoview.$error">
-            <div ng-message="required">This field is required.</div>
-            <div ng-message="pattern">This is not considered a Star Wars movie, please choose another one.</div>
-          </div>
-        </md-input-container>
-        <md-input-container class="md-block" flex="50">
-          <label>TV Series that you are currently watching</label>
-          <input ng-model="vm.step1.tvSeries" ng-blur="vm.handleInputCompletion(favThings1.tvSeries.$valid, 25, 1)"
-                  required name="tvSeries"></input>
-          <div ng-messages="favThings1.tvSeries.$error">
-            <div ng-message="required">This field is required.</div>
-          </div>
-        </md-input-container>
-      </div>
+          <form name="vm.form1">
+            <div layout="row" layout-xs="column">
+              <md-input-container class="md-block" flex>
+                <label>Your favorite star wars movie</label>
+                <input ng-model="vm.step1.favSTMovie" ng-blur="vm.handleInputCompletion(vm.form1.swMoview.$valid, 25, 1)"
+                        required name="swMoview" 
+                        ng-pattern="/a\snew\shope|the\sempire\sstrikes\sback|return\sof\sthe\sjedi\the\sforce\sawakens/i">
+                </input>
+                <div ng-messages="vm.form1.swMoview.$error">
+                  <div ng-message="required">This field is required.</div>
+                  <div ng-message="pattern">This is not considered a Star Wars movie, please choose another one.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block" flex>
+                <label>TV Series that you are currently watching</label>
+                <input ng-model="vm.step1.tvSeries" ng-blur="vm.handleInputCompletion(vm.form1.tvSeries.$valid, 25, 1)"
+                        required name="tvSeries"></input>
+                <div ng-messages="vm.form1.tvSeries.$error">
+                  <div ng-message="required">This field is required.</div>
+                </div>
+              </md-input-container>
+            </div>
 
-      <div layout="row">
-        <md-input-container class="md-block" flex="50">
-          <label>Which one do you use: Bolacha or Biscoito?</label>
-          <input ng-model="vm.step1.bolachaBiscoito" ng-blur="vm.handleInputCompletion(favThings1.biscoito.$valid, 25, 1)"
-                  required name="biscoito" ng-pattern="/bolacha|biscoito/i"></input>
-          <div ng-messages="favThings1.biscoito.$error">
-            <div ng-message="required">This field is required.</div>
-            <div ng-message="pattern">Please, choose only between Biscoito or Bolacha.</div>
-          </div>
-        </md-input-container>
-        <md-input-container class="md-block" flex="50">
-          <label>What is the best quote ever?</label>
-          <input ng-model="vm.step1.bestQuote" ng-blur="vm.handleInputCompletion(favThings1.quote.$valid, 25, 1)"
-                  required name="quote"></input>
-          <div ng-messages="favThings1.quote.$error">
-            <div ng-message="required">This is required.</div>
-          </div>
-        </md-input-container>
-      </div>
-    </form>
+            <div layout="row">
+              <md-input-container class="md-block" flex>
+                <label>Which one do you use: Bolacha or Biscoito?</label>
+                <input ng-model="vm.step1.bolachaBiscoito" ng-blur="vm.handleInputCompletion(vm.form1.biscoito.$valid, 25, 1)"
+                        required name="biscoito" ng-pattern="/bolacha|biscoito/i"></input>
+                <div ng-messages="vm.form1.biscoito.$error">
+                  <div ng-message="required">This field is required.</div>
+                  <div ng-message="pattern">Please, choose only between Biscoito or Bolacha.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block" flex>
+                <label>What is the best quote ever?</label>
+                <input ng-model="vm.step1.bestQuote" ng-blur="vm.handleInputCompletion(vm.form1.quote.$valid, 25, 1)"
+                        required name="quote"></input>
+                <div ng-messages="vm.form1.quote.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+            </div>
+          </form>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="two">
+        ahahaahah
+      </md-tab>
+    </md-tabs>
 
   </md-card-content>
   <md-divider></md-divider>
   <md-card-actions layout="container">
-   <md-button class="md-raised md-primary">Back</md-button>
+   <md-button class="md-raised md-primary" ng-click="vm.previousTab()">Back</md-button>
    <div flex="90"></div>
-   <md-button class="md-raised md-primary">Next</md-button>
+   <md-button class="md-raised md-primary" ng-click="vm.nextTab()">Next</md-button>
  </md-card-actions>
 </md-card>

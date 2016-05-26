@@ -7,7 +7,8 @@
     return {
       restrict: 'E',
       scope: {
-        steps: '@'
+        steps: '@',
+        selectedStep: '='
       },
       templateUrl: '/views/steps.html',
       controller: FavFormController,
@@ -17,7 +18,6 @@
     function FavFormController ($scope) {
       var vm = this;
       vm.stepsCompletion = [];
-      vm.actualStep = 0;
 
       vm.init = function () {
         var stepCompletion;
@@ -57,8 +57,8 @@
       });
 
       $scope.$on('nextStep', function (evts) {
-        if (vm.stepsCompletion[vm.actualStep].completion >= 100) {
-          vm.stepsCompletion[vm.actualStep].completed = true;
+        if (vm.stepsCompletion[$scope.selectedStep].completion >= 100) {
+          vm.stepsCompletion[$scope.selectedStep].completed = true;
         }
       });
     }
