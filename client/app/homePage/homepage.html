@@ -1,1 +1,37 @@
-<span>{{vm.test}}</span>
+<md-card>
+  <md-card-header>
+  </md-card-header>
+  <md-divider></md-divider>
+  <md-card-content layout="column" layout-margin>
+    <p class="md-body-1">First things first: tell us a little bit about yourself</p>
+
+    <div layout="row">
+      <md-input-container class="md-block" flex="50">
+        <label>Your favorite star wars movie</label>
+        <input ng-model="vm.step1.favSTMovie"></input>
+      </md-input-container>
+      <md-input-container class="md-block" flex="50">
+        <label>TV Series that you are currently watching</label>
+        <input ng-model="vm.step1.tvSeries"></input>
+      </md-input-container>
+    </div>
+
+    <div layout="row">
+      <md-input-container class="md-block" flex="50">
+        <label>Which one do you use: Bolacha or Biscoito?</label>
+        <input ng-model="vm.step1.bolachaBiscoito"></input>
+      </md-input-container>
+      <md-input-container class="md-block" flex="50">
+        <label>What is the best quote ever?</label>
+        <input ng-model="vm.step1.bestQuote"></input>
+      </md-input-container>
+    </div>
+
+  </md-card-content>
+  <md-divider></md-divider>
+  <md-card-actions layout="container">
+   <md-button class="md-raised md-primary">Back</md-button>
+   <div flex="90"></div>
+   <md-button class="md-raised md-primary">Next</md-button>
+ </md-card-actions>
+</md-card>

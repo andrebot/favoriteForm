@@ -7,7 +7,12 @@
   function HomepageController () {
     var vm = this;
 
-    vm.test = 'agora';
+    vm.step1 = {
+      favSTMovie: '',
+      tvSeries: '',
+      bolachaBiscoito: '',
+      bestQuote: ''
+    };
   }
 
 })();
