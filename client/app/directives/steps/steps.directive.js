@@ -47,6 +47,15 @@
         }
       });
 
+      $scope.$on('drainInputCompletion', function (evts, completionStatus) {
+        var completionPercentage = completionStatus.value;
+        var step = completionStatus.step - 1;
+
+        if (vm.stepsCompletion[step].completion > 0) {
+          vm.stepsCompletion[step].completion -= completionPercentage;
+        }
+      });
+
       $scope.$on('nextStep', function (evts) {
         if (vm.stepsCompletion[vm.actualStep].completion >= 100) {
           vm.stepsCompletion[vm.actualStep].completed = true;

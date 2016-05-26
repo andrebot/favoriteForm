@@ -1,6 +1,6 @@
 <div layout="row">
   <div flex={{vm.getFlexNumber($last)}} ng-repeat="step in vm.stepsCompletion track by $index" layout="row" layout-align="none center">
-    <span flex="auto" class="step-chip" ng-class="{'completed': step.completed}">{{$index + 1}}</span>
+    <span flex="auto" class="step-chip" ng-class="{'active': $index <= vm.actualStep}">{{$index + 1}}</span>
     <md-progress-linear ng-if="!$last" flex="grow" md-mode="determinate" value="{{step.completion}}"></md-progress-linear>
   </div>
 </div>

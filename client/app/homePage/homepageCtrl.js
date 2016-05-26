@@ -17,6 +17,8 @@
     vm.handleInputCompletion = function (isValid, value, step) {
       if (isValid) {
         $rootScope.$broadcast('fillInputCompletion', { value: value, step: step });
+      } else {
+        $rootScope.$broadcast('drainInputCompletion', { value: value, step: step });
       }
     };
   }
