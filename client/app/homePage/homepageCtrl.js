@@ -7,11 +7,6 @@
   function HomepageController ($rootScope) {
     var vm = this;
 
-    vm.worthyStarWarsMovies = ['a new hope',
-                               'the empire strikes back',
-                               'return of the jedi',
-                               'the force awakens'];
-
     vm.step1 = {
       favSTMovie: '',
       tvSeries: '',
