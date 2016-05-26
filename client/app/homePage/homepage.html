@@ -13,7 +13,7 @@
             <div layout="row" layout-xs="column">
               <md-input-container class="md-block" flex>
                 <label>Your favorite star wars movie</label>
-                <input ng-model="vm.step1.favSTMovie" ng-blur="vm.handleInputCompletion(vm.form1.swMoview.$valid, 25, 1)"
+                <input ng-model="vm.step1.favSTMovie" ng-blur="vm.handleInputCompletion(vm.form1.swMoview.$valid, 0, 25, 1)"
                         required name="swMoview" 
                         ng-pattern="/a\snew\shope|the\sempire\sstrikes\sback|return\sof\sthe\sjedi\the\sforce\sawakens/i">
                 </input>
@@ -24,7 +24,7 @@
               </md-input-container>
               <md-input-container class="md-block" flex>
                 <label>TV Series that you are currently watching</label>
-                <input ng-model="vm.step1.tvSeries" ng-blur="vm.handleInputCompletion(vm.form1.tvSeries.$valid, 25, 1)"
+                <input ng-model="vm.step1.tvSeries" ng-blur="vm.handleInputCompletion(vm.form1.tvSeries.$valid, 1, 25, 1)"
                         required name="tvSeries"></input>
                 <div ng-messages="vm.form1.tvSeries.$error">
                   <div ng-message="required">This field is required.</div>
@@ -35,7 +35,7 @@
             <div layout="row" layout-xs="column">
               <md-input-container class="md-block" flex>
                 <label>Which one do you use: Bolacha or Biscoito?</label>
-                <input ng-model="vm.step1.bolachaBiscoito" ng-blur="vm.handleInputCompletion(vm.form1.biscoito.$valid, 25, 1)"
+                <input ng-model="vm.step1.bolachaBiscoito" ng-blur="vm.handleInputCompletion(vm.form1.biscoito.$valid, 2, 25, 1)"
                         required name="biscoito" ng-pattern="/bolacha|biscoito/i"></input>
                 <div ng-messages="vm.form1.biscoito.$error">
                   <div ng-message="required">This field is required.</div>
@@ -44,7 +44,7 @@
               </md-input-container>
               <md-input-container class="md-block" flex>
                 <label>What is the best quote ever?</label>
-                <input ng-model="vm.step1.bestQuote" ng-blur="vm.handleInputCompletion(vm.form1.quote.$valid, 25, 1)"
+                <input ng-model="vm.step1.bestQuote" ng-blur="vm.handleInputCompletion(vm.form1.quote.$valid, 3, 25, 1)"
                         required name="quote"></input>
                 <div ng-messages="vm.form1.quote.$error">
                   <div ng-message="required">This is required.</div>

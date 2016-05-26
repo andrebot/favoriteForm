@@ -13,6 +13,7 @@
       bolachaBiscoito: '',
       bestQuote: ''
     };
+    vm.step1InputStatus = [false, false, false, false];
 
     vm.step2 = {
       selectedRadio: 0
@@ -39,11 +40,13 @@
     vm.tabSelected = 0;
     vm.maxTabs = 3;
 
-    vm.handleInputCompletion = function (isValid, value, step) {
+    vm.handleInputCompletion = function (isValid, index, value, step) {
       if (isValid) {
         $rootScope.$broadcast('fillInputCompletion', { value: value, step: step });
-      } else {
+        vm.step1InputStatus[index] = true;
+      } else if (vm.step1InputStatus[index]) {
         $rootScope.$broadcast('drainInputCompletion', { value: value, step: step });
+        vm.step1InputStatus[index] = false;
       }
     };
 
