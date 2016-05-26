@@ -1,5 +1,6 @@
 <md-card>
-  <md-card-header>
+  <md-card-header layout>
+    <favform-steps steps="3" flex="grow"></favform-steps>
   </md-card-header>
   <md-divider></md-divider>
   <md-card-content layout="column" layout-margin>
@@ -8,22 +9,22 @@
     <div layout="row">
       <md-input-container class="md-block" flex="50">
         <label>Your favorite star wars movie</label>
-        <input ng-model="vm.step1.favSTMovie"></input>
+        <input ng-model="vm.step1.favSTMovie" ng-blur="vm.handleInputCompletion(25, 1)"></input>
       </md-input-container>
       <md-input-container class="md-block" flex="50">
         <label>TV Series that you are currently watching</label>
-        <input ng-model="vm.step1.tvSeries"></input>
+        <input ng-model="vm.step1.tvSeries" ng-blur="vm.handleInputCompletion(25, 1)"></input>
       </md-input-container>
     </div>
 
     <div layout="row">
       <md-input-container class="md-block" flex="50">
         <label>Which one do you use: Bolacha or Biscoito?</label>
-        <input ng-model="vm.step1.bolachaBiscoito"></input>
+        <input ng-model="vm.step1.bolachaBiscoito" ng-blur="vm.handleInputCompletion(25, 1)"></input>
       </md-input-container>
       <md-input-container class="md-block" flex="50">
         <label>What is the best quote ever?</label>
-        <input ng-model="vm.step1.bestQuote"></input>
+        <input ng-model="vm.step1.bestQuote" ng-blur="vm.handleInputCompletion(25, 1)"></input>
       </md-input-container>
     </div>
 
