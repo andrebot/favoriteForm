@@ -8,6 +8,7 @@ module.exports = {
   assetsPath:      'client/app/assets/',
   distFolder:      'dist',
   htmlPath:        'client/app/**/*.html',
+  imgsPath:        'client/app/assets/imgs/',
   indexLibPath:    'client/index.html',
   jsPath:          'client/app/**/*.js',
   jsFirstPath:     'client/*.js',

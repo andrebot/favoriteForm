@@ -56,7 +56,20 @@
       </md-tab>
 
       <md-tab label="two">
-        ahahaahah
+        <md-content>
+          <p class="md-body-1">We take too serious to choose our restaurant, everyday. What kind of food do you like?</p>
+
+          <form name="vm.form2">
+            <md-radio-group ng-change="vm.handleRadioSelect(100, 2)" ng-model="vm.step2.selectedRadio" layout="row" layout-xs="column" layout-margin>
+              <div ng-repeat="food in vm.foods" flex class="custom-radio-group">
+                <img ng-src="{{food.url}}" class="food-imgs" alt="{{food.text}}" />
+                <md-radio-button ng-value="food.id" layout="column">
+                  <span class="radio text">{{food.text}}</span>
+                </md-radio-button>
+              </div>
+            </md-radio-group>
+          </form>
+        </md-content>
       </md-tab>
     </md-tabs>
 

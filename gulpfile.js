@@ -11,6 +11,7 @@ gulp.task('build', function (cb) {
                 'copy:scss',
                 'copy:index',
                 'copy:html',
+                'copy:imgs',
                 'build:js',
                 'build:css'
                ], cb);

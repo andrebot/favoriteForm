@@ -2,4 +2,26 @@
   md-tabs-wrapper {
     display: none;
   }
+
+  .food-imgs {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .custom-radio-group {
+    md-radio-button {
+      .md-container {
+        position: relative;
+        top: 25px;
+        left: 14%;
+      }
+
+      .md-label {
+        display: block;
+        margin-left: 0px;
+        margin-top: 25px;
+      }
+    }
+  }
 }
