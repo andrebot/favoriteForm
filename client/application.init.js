@@ -3,6 +3,7 @@
 
 var AppDependencies = [
                         'ngMaterial',
+                        'ngMessages',
                         'ngRoute',
                         'favForm.directives'
                       ];

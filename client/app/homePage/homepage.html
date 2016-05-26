@@ -6,27 +6,49 @@
   <md-card-content layout="column" layout-margin>
     <p class="md-body-1">First things first: tell us a little bit about yourself</p>
 
-    <div layout="row">
-      <md-input-container class="md-block" flex="50">
-        <label>Your favorite star wars movie</label>
-        <input ng-model="vm.step1.favSTMovie" ng-blur="vm.handleInputCompletion(25, 1)"></input>
-      </md-input-container>
-      <md-input-container class="md-block" flex="50">
-        <label>TV Series that you are currently watching</label>
-        <input ng-model="vm.step1.tvSeries" ng-blur="vm.handleInputCompletion(25, 1)"></input>
-      </md-input-container>
-    </div>
+    <form name="favThings1">
+      <div layout="row">
+        <md-input-container class="md-block" flex="50">
+          <label>Your favorite star wars movie</label>
+          <input ng-model="vm.step1.favSTMovie" ng-blur="vm.handleInputCompletion(favThings1.swMoview.$valid, 25, 1)"
+                  required name="swMoview" 
+                  ng-pattern="/a\snew\shope|the\sempire\sstrikes\sback|return\sof\sthe\sjedi\the\sforce\sawakens/i">
+          </input>
+          <div ng-messages="favThings1.swMoview.$error">
+            <div ng-message="required">This field is required.</div>
+            <div ng-message="pattern">This is not considered a Star Wars movie, please choose another one.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>TV Series that you are currently watching</label>
+          <input ng-model="vm.step1.tvSeries" ng-blur="vm.handleInputCompletion(favThings1.tvSeries.$valid, 25, 1)"
+                  required name="tvSeries"></input>
+          <div ng-messages="favThings1.tvSeries.$error">
+            <div ng-message="required">This field is required.</div>
+          </div>
+        </md-input-container>
+      </div>
 
-    <div layout="row">
-      <md-input-container class="md-block" flex="50">
-        <label>Which one do you use: Bolacha or Biscoito?</label>
-        <input ng-model="vm.step1.bolachaBiscoito" ng-blur="vm.handleInputCompletion(25, 1)"></input>
-      </md-input-container>
-      <md-input-container class="md-block" flex="50">
-        <label>What is the best quote ever?</label>
-        <input ng-model="vm.step1.bestQuote" ng-blur="vm.handleInputCompletion(25, 1)"></input>
-      </md-input-container>
-    </div>
+      <div layout="row">
+        <md-input-container class="md-block" flex="50">
+          <label>Which one do you use: Bolacha or Biscoito?</label>
+          <input ng-model="vm.step1.bolachaBiscoito" ng-blur="vm.handleInputCompletion(favThings1.biscoito.$valid, 25, 1)"
+                  required name="biscoito" ng-pattern="/bolacha|biscoito/i"></input>
+          <div ng-messages="favThings1.biscoito.$error">
+            <div ng-message="required">This field is required.</div>
+            <div ng-message="pattern">Please, choose only between Biscoito or Bolacha.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex="50">
+          <label>What is the best quote ever?</label>
+          <input ng-model="vm.step1.bestQuote" ng-blur="vm.handleInputCompletion(favThings1.quote.$valid, 25, 1)"
+                  required name="quote"></input>
+          <div ng-messages="favThings1.quote.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+      </div>
+    </form>
 
   </md-card-content>
   <md-divider></md-divider>
