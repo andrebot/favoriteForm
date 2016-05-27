@@ -20,3 +20,7 @@ gulp.task('build', function (cb) {
 gulp.task('run', function (cb) {
   runSequence(['build'], ['webserver', 'watch']);
 });
+
+gulp.task('default', function (cb) {
+  runSequence(['build'], ['webserver']);
+});
