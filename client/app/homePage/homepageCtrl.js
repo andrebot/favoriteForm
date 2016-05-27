@@ -79,6 +79,17 @@
     vm.showSaveDialog = function () {
       var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     };
+
+    vm.updateForms = function () {
+      $rootScope.$broadcast('fillInputCompletion', { value: 100, step: 1 });
+      $rootScope.$broadcast('fillInputCompletion', { value: 100, step: 2 });
+
+      vm.step1InputStatus.map(function (value) {
+        return !value;
+      });
+
+      vm.disableNextButton = false;
+    };
   }
 
 })();

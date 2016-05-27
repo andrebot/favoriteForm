@@ -8,7 +8,8 @@
       restrict: 'E',
       scope: {
         form1: '=',
-        form2: '='
+        form2: '=',
+        updateForms: '&'
       },
       templateUrl: '/views/loadAnswerButton.html',
       controller: LoadAnswerButtonController,
@@ -34,6 +35,8 @@
 
           $scope.form1 = answers.form1;
           $scope.form2 = answers.form2;
+
+          $scope.updateForms();
 
           $mdToast.show(
             $mdToast.simple()
