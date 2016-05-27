@@ -7,7 +7,7 @@ const gulp   = require('gulp');
 
 gulp.task('build:css', function () {
   return gulp.src([config.scssPath])
-          .pipe(sass().on('error', sass.logError))
           .pipe(concat('app.css'))
+          .pipe(sass().on('error', sass.logError))
           .pipe(gulp.dest(`${config.distFolder}`));
 });

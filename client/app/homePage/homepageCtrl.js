@@ -39,15 +39,21 @@
 
     vm.tabSelected = 0;
     vm.maxTabs = 3;
+    vm.disableNextButton = true;
 
     vm.handleInputCompletion = function (isValid, index, value, step) {
       if (isValid) {
-        $rootScope.$broadcast('fillInputCompletion', { value: value, step: step });
-        vm.step1InputStatus[index] = true;
+        //This condition is down here because its exception is not to drain the input completion
+        if (!vm.step1InputStatus[index]) {
+          $rootScope.$broadcast('fillInputCompletion', { value: value, step: step });
+          vm.step1InputStatus[index] = true;
+        }
       } else if (vm.step1InputStatus[index]) {
         $rootScope.$broadcast('drainInputCompletion', { value: value, step: step });
         vm.step1InputStatus[index] = false;
       }
+
+      vm.enableNextButton();
     };
 
     vm.handleRadioSelect = function (value, step) {
@@ -57,9 +63,11 @@
     };
 
     vm.nextTab = function () {
-      if (vm['form' + (vm.tabSelected + 1)].$valid && vm.tabSelected < vm.maxTabs) {
-        vm.tabSelected++;
-      }
+      vm.tabSelected++;
+    };
+
+    vm.enableNextButton = function () {
+      vm.disableNextButton = !(vm['form' + (vm.tabSelected + 1)].$valid && vm.tabSelected < vm.maxTabs);
     };
 
     vm.previousTab = function () {
