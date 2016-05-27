@@ -53,7 +53,7 @@ describe( 'LoadAnswerGridSheet Directive', function () {
       $httpBackend.whenGET('/views/loadAnswerButton.html')
         .respond({success: true, data: '<h1></h1>'});
 
-      var el = angular.element('<load-answer-grid-sheet form1="form1" form2="form2" updateForms="updateForms()"></load-answer-grid-sheet>');
+      var el = angular.element('<load-answer-grid-sheet form1="form1" form2="form2" update-forms="updateForms()"></load-answer-grid-sheet>');
       $compile(el)($scope);
 
       $rootScope.$digest();
@@ -102,6 +102,7 @@ describe( 'LoadAnswerGridSheet Directive', function () {
       ctrl.loadAnswer(key);
 
       expect(answerService.getAnswer).toHaveBeenCalledWith(key);
+      expect($scope.updateForms).toHaveBeenCalled();
       expect($mdToast.show).toHaveBeenCalled();
       expect($mdToast.simple).toHaveBeenCalled();
     });

@@ -57,7 +57,7 @@ describe('SaveAnserDialog Directive', function () {
       $httpBackend.whenGET('/views/saveButton.html')
         .respond({success: true, data: '<h1></h1>'});
 
-      var el = angular.element('<save-answer-dialog form1="form1" form2="form2" maxTabs="maxTabs" tabSelected="tabSelected"></save-answer-dialog>');
+      var el = angular.element('<save-answer-dialog form1="form1" form2="form2" max-tabs="maxTabs" tab-selected="tabSelected"></save-answer-dialog>');
       $compile(el)($scope);
 
       $rootScope.$digest();
