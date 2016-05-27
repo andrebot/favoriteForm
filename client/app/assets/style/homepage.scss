@@ -24,4 +24,14 @@
       }
     }
   }
+
+  .last-radio {
+    .radio-text {
+      display: block;
+      position: absolute;
+      top: 40%;
+      left: 115px;
+      width: 130px;
+    }
+  }
 }

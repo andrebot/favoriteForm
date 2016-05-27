@@ -71,6 +71,46 @@
           </form>
         </md-content>
       </md-tab>
+
+      <md-tab label="3">
+        <md-content>
+          <p class="md-body-1">Review</p>
+
+          <form name="vm.form1">
+            <div layout="row" layout-xs="column">
+              <md-input-container class="md-block" flex>
+                <label>Your favorite star wars movie</label>
+                <input ng-model="vm.step1.favSTMovie" name="swMoview" disabled>
+                </input>
+              </md-input-container>
+              <md-input-container class="md-block" flex>
+                <label>TV Series that you are currently watching</label>
+                <input ng-model="vm.step1.tvSeries" name="tvSeries" disabled></input>
+              </md-input-container>
+            </div>
+
+            <div layout="row" layout-xs="column">
+              <md-input-container class="md-block" flex>
+                <label>Which one do you use: Bolacha or Biscoito?</label>
+                <input ng-model="vm.step1.bolachaBiscoito" name="biscoito" disabled></input>
+              </md-input-container>
+              <md-input-container class="md-block" flex>
+                <label>What is the best quote ever?</label>
+                <input ng-model="vm.step1.bestQuote" name="quote" disabled></input>
+              </md-input-container>
+            </div>
+
+            <div flex>
+              <md-radio-group ng-model="vm.step2.selectedRadio" class="last-radio">
+                <md-radio-button ng-value="vm.step2.selectedRadio" disabled>
+                  <img ng-src="{{vm.foods[vm.step2.selectedRadio].url}}" class="food-imgs" alt="{{vm.foods[vm.step2.selectedRadio].text}}" />
+                  <span class="radio-text">{{vm.foods[vm.step2.selectedRadio].text}}</span>
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+          </form>
+        </md-content>
+      </md-tab>
     </md-tabs>
 
   </md-card-content>
@@ -78,6 +118,7 @@
   <md-card-actions layout="container">
    <md-button class="md-raised md-primary" ng-click="vm.previousTab()">Back</md-button>
    <div flex="90"></div>
-   <md-button class="md-raised md-primary" ng-click="vm.nextTab()">Next</md-button>
+   <md-button class="md-raised md-primary" ng-click="vm.nextTab()" ng-show="vm.tabSelected < (vm.maxTabs - 1)">Next</md-button>
+   <md-button class="md-raised md-primary" ng-click="vm.save()" ng-show="vm.tabSelected == (vm.maxTabs - 1)">Save</md-button>
  </md-card-actions>
 </md-card>

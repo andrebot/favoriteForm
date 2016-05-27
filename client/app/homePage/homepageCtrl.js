@@ -20,19 +20,19 @@
     };
 
     vm.foods = [{
-      id: 1,
+      id: 0,
       text: 'I am an insect.',
       url: '/imgs/yummy-insect.jpeg'
     },{
-      id: 2,
+      id: 1,
       text: 'I love pasta.',
       url: '/imgs/pasta.jpeg'
     },{
-      id: 3,
+      id: 2,
       text: 'Gimme meat.',
       url: '/imgs/meat.jpeg'
     },{
-      id: 4,
+      id: 3,
       text: 'Is it food? I am in.',
       url: '/imgs/food.jpeg'
     }];
@@ -66,6 +66,10 @@
       if (vm.tabSelected > 0) {
         vm.tabSelected--;
       }
+    };
+
+    vm.save = function () {
+
     };
   }
 

@@ -5,10 +5,10 @@ var AppDependencies = [
                         'ngMaterial',
                         'ngMessages',
                         'ngRoute',
-                        'favForm.directives'
+                        'favForm.directives',
+                        'favForm.services'
                       ];
   
-  angular
-    .module('FavForm', AppDependencies);
+  angular.module('FavForm', AppDependencies);
 
 })();
