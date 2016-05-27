@@ -20,18 +20,8 @@
     function SaveAnswerButtonController ($scope, $mdDialog, $mdMedia, AnswersService) {
       var vm = this;
 
-      vm.openSaveDialog = function (evt) {
-        var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-
-        $mdDialog.show({
-          controller: SaveAnswerDialogController,
-          controllerAs: 'vm',
-          templateUrl: '/views/saveAnswerDialog.html',
-          parent: angular.element(document.body),
-          targetEvent: evt,
-          clickOutsideToClose: true,
-          fullscreen: useFullScreen
-        }).then(function (key) {
+      vm.saveAnswers = function (evt) {
+        return function (key) {
           AnswersService.saveAnswers(key, $scope.form1, $scope.form2);
 
           $mdDialog.show(
@@ -44,7 +34,21 @@
               .ok('Ok')
               .targetEvent(evt)
           );
-        });
+        };
+      };
+
+      vm.openSaveDialog = function (evt) {
+        var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
+
+        $mdDialog.show({
+          controller: SaveAnswerDialogController,
+          controllerAs: 'vm',
+          templateUrl: '/views/saveAnswerDialog.html',
+          parent: angular.element(document.body),
+          targetEvent: evt,
+          clickOutsideToClose: true,
+          fullscreen: useFullScreen
+        }).then(vm.saveAnswers(evt));
       };
     }
 
