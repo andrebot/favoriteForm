@@ -53,7 +53,7 @@
         vm.step1InputStatus[index] = false;
       }
 
-      vm.enableNextButton(isValid);
+      vm.enableNextButton();
     };
 
     vm.handleRadioSelect = function (value, step) {
@@ -66,8 +66,8 @@
       vm.tabSelected++;
     };
 
-    vm.enableNextButton = function (isValid) {
-      vm.disableNextButton = !(isValid && vm.tabSelected < vm.maxTabs);
+    vm.enableNextButton = function () {
+      vm.disableNextButton = !(vm['form' + (vm.tabSelected + 1)].$valid && vm.tabSelected < vm.maxTabs);
     };
 
     vm.previousTab = function () {
