@@ -14,8 +14,7 @@ describe('Steps Directive', function () {
   var selectedStep;
 
   beforeEach(inject(function (_$controller_, _$rootScope_, _$compile_, 
-                              _$httpBackend_, _AnswersService_,
-                              _$mdDialog_, _$mdMedia_) {
+                              _$httpBackend_, _AnswersService_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
     $compile = _$compile_;

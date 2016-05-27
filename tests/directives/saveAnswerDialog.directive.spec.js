@@ -17,17 +17,15 @@ describe('SaveAnserDialog Directive', function () {
   var form2;
   var maxTabs;
   var tabSelected;
-  var updateForms;
 
   beforeEach(inject(function (_$controller_, _$rootScope_, _$compile_, 
                               _$httpBackend_, _AnswersService_,
-                              _$mdDialog_, _$mdMedia_) {
+                              _$mdDialog_) {
     $controller = _$controller_;
     $rootScope = _$rootScope_;
     $compile = _$compile_;
     $httpBackend = _$httpBackend_;
     $mdDialog = _$mdDialog_;
-    $mdMedia_ = _$mdMedia_;
     answerService = _AnswersService_;
   }));
 
