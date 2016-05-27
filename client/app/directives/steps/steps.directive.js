@@ -15,7 +15,7 @@
       controllerAs: 'vm'
     };
 
-    function FavFormController ($scope) {
+    function FavFormStepsController ($scope) {
       var vm = this;
       vm.stepsCompletion = [];
 
