@@ -31,6 +31,10 @@ describe( 'Homepage Controller', function () {
         step: 1
       };
 
+      ctrl.form1 = {
+        $valid: true
+      }; 
+
       ctrl.handleInputCompletion(data.isValid, data.index, data.value, data.step);
 
       expect($rootScope.$broadcast)
@@ -46,6 +50,10 @@ describe( 'Homepage Controller', function () {
         value: 25,
         step: 1
       };
+
+      ctrl.form1 = {
+        $valid: true
+      }; 
 
       ctrl.step1InputStatus[data.index] = true;
 
@@ -64,6 +72,10 @@ describe( 'Homepage Controller', function () {
         step: 1
       };
 
+      ctrl.form1 = {
+        $valid: false
+      }; 
+
       ctrl.step1InputStatus[data.index] = true;
 
       ctrl.handleInputCompletion(data.isValid, data.index, data.value, data.step);
@@ -81,6 +93,10 @@ describe( 'Homepage Controller', function () {
         value: 25,
         step: 1
       };
+
+      ctrl.form1 = {
+        $valid: false
+      }; 
 
       ctrl.step1InputStatus[data.index] = false;
 
