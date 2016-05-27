@@ -20,6 +20,22 @@
       var vm = this;
       vm.answersList = [];
 
+      vm.loadAnswer = function (key) {
+        var answers = AnswersService.getAnswer(key);
+
+        $scope.form1 = answers.form1;
+        $scope.form2 = answers.form2;
+
+        $scope.updateForms();
+
+        $mdToast.show(
+          $mdToast.simple()
+            .textContent('Answer loaded successfully!')
+            .position('top right')
+            .hideDelay(1000)
+        );
+      };
+
       vm.showAnswers = function (evt) {
         vm.answersList = AnswersService.listSavedAnswers();
 
@@ -30,21 +46,7 @@
           locals: {
             answersList: vm.answersList
           }
-        }).then(function (key) {
-          var answers = AnswersService.getAnswer(key);
-
-          $scope.form1 = answers.form1;
-          $scope.form2 = answers.form2;
-
-          $scope.updateForms();
-
-          $mdToast.show(
-            $mdToast.simple()
-              .textContent('Answer loaded successfully!')
-              .position('top right')
-              .hideDelay(1000)
-          );
-        });
+        }).then(vm.loadAnswer);
       };
     }
 

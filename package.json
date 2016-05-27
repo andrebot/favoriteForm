@@ -4,7 +4,8 @@
   "description": "A simple form to register some of your favorite things.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp build && karma start",
+    "install-globals": "npm install -g gulp karma-cli"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "angular-sanitize": "^1.5.5"
   },
   "devDependencies": {
+    "angular-mocks": "^1.5.5",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
@@ -40,7 +42,14 @@
     "gulp-jshint": "^2.0.1",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-sass": "^2.3.1",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "jasmine-spec-reporter": "^2.4.0",
     "jshint": "^2.9.2",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-spec-reporter": "0.0.26",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.1"
   }

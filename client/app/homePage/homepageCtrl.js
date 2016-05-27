@@ -53,7 +53,7 @@
         vm.step1InputStatus[index] = false;
       }
 
-      vm.enableNextButton();
+      vm.enableNextButton(isValid);
     };
 
     vm.handleRadioSelect = function (value, step) {
@@ -66,8 +66,8 @@
       vm.tabSelected++;
     };
 
-    vm.enableNextButton = function () {
-      vm.disableNextButton = !(vm['form' + (vm.tabSelected + 1)].$valid && vm.tabSelected < vm.maxTabs);
+    vm.enableNextButton = function (isValid) {
+      vm.disableNextButton = !(isValid && vm.tabSelected < vm.maxTabs);
     };
 
     vm.previousTab = function () {
@@ -76,15 +76,11 @@
       }
     };
 
-    vm.showSaveDialog = function () {
-      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-    };
-
     vm.updateForms = function () {
       $rootScope.$broadcast('fillInputCompletion', { value: 100, step: 1 });
       $rootScope.$broadcast('fillInputCompletion', { value: 100, step: 2 });
 
-      vm.step1InputStatus.map(function (value) {
+      vm.step1InputStatus = vm.step1InputStatus.map(function (value) {
         return !value;
       });
 
