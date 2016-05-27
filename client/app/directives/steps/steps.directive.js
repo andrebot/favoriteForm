@@ -11,7 +11,7 @@
         selectedStep: '='
       },
       templateUrl: '/views/steps.html',
-      controller: FavFormController,
+      controller: FavFormStepsController,
       controllerAs: 'vm'
     };
 

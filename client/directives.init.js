@@ -1,6 +1,6 @@
 (function () {
   'use strict';
 
-  angular.module('favForm.directives', []);
+  angular.module('favForm.directives', ['ngMessages']);
 
 })();

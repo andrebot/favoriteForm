@@ -3,7 +3,7 @@
 
   angular.module('favForm.services').factory('AnswersService', AnswersService);
 
-  function AnswersService (localStorageServiceProvider) {
+  function AnswersService (localStorageService) {
     return {
       saveAnswers: saveAnswers,
       listSavedAnswers: listSavedAnswers,
@@ -11,15 +11,15 @@
     };
 
     function saveAnswers (key, form1, form2) {
-      localStorageServiceProvider.set(key, {form1: form1, form2: form2});
+      localStorageService.set(key, {form1: form1, form2: form2});
     }
 
     function listSavedAnswers () {
-      return localStorageServiceProvider.keys();
+      return localStorageService.keys();
     }
 
     function getAnswer (key) {
-      return localStorageServiceProvider.get(key);
+      return localStorageService.get(key);
     }
   }
 

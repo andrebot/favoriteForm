@@ -15,7 +15,8 @@ module.exports = {
   jsLibPath:       [
                    //Not using all angular-* dependencies, but this makes my life easier
                      'node_modules/angular*/angular*.min.js',
-                     'node_modules/angular*/angular*.min.js.map'
+                     'node_modules/angular*/angular*.min.js.map',
+                     'node_modules/angular-local-storage/dist/*.min*'
                    ],
   scssPath:        'client/app/assets/style/*.scss'
 };

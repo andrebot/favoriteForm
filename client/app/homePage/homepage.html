@@ -119,6 +119,6 @@
    <md-button class="md-raised md-primary" ng-click="vm.previousTab()">Back</md-button>
    <div flex="90"></div>
    <md-button class="md-raised md-primary" ng-click="vm.nextTab()" ng-show="vm.tabSelected < (vm.maxTabs - 1)">Next</md-button>
-   <md-button class="md-raised md-primary" ng-click="vm.save()" ng-show="vm.tabSelected == (vm.maxTabs - 1)">Save</md-button>
+   <save-answer-dialog tab-selected="vm.tabSelected" max-tabs="vm.maxTabs" form1="vm.step1" form2="vm.step2"></save-answer-dialog>
  </md-card-actions>
 </md-card>

@@ -68,8 +68,8 @@
       }
     };
 
-    vm.save = function () {
-
+    vm.showSaveDialog = function () {
+      var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     };
   }
 
